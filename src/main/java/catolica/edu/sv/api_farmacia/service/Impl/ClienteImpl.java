@@ -20,8 +20,14 @@ public class ClienteImpl implements ICliente {
     }
 
     @Override
+    public List<ClienteEntity> findByidCliente(long idCliente) {
+        return clienteRepository.findByIdCliente(idCliente);
+    }
+
+    @Override
     public ClienteEntity save(ClienteEntity cliente) {
         return clienteRepository.save(cliente);
     }
+
 
 }

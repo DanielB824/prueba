@@ -8,6 +8,8 @@ public interface ICliente {
 
     List<ClienteEntity> findAll();
 
+    List<ClienteEntity> findByidCliente(long idCliente);
+
     ClienteEntity save(ClienteEntity cliente);
 
 }

@@ -27,6 +27,12 @@ public class ClienteController {
                 .build(),HttpStatus.OK);
     }
 
+    @Transactional (readOnly = true)
+    @GetMapping("/consultarCliente/{idCliente}")
+    public List<ClienteEntity> findByIdCliente(@PathVariable("idCliente") long idCliente) {
+        return iCliente.findByidCliente(idCliente);
+    }
+
     @Transactional
     @PostMapping("/clientes")
     public ClienteEntity saveCliente(@RequestBody ClienteEntity cliente) {
